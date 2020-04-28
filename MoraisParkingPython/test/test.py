@@ -60,4 +60,4 @@ def test_estacionamento():
 # test_proprietario()
 # test_veiculo()
 # test_area_estacionamento()
-test_estacionamento()
+# test_estacionamento()
