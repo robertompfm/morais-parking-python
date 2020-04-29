@@ -1,4 +1,4 @@
-from model.proprietario import Proprietario
+rom model.proprietario import Proprietario
 
 
 class Veiculo:
@@ -49,7 +49,7 @@ class Veiculo:
 
     # EQ (equals)
     def __eq__(self, other):
-        return isinstance(other, Veiculo) and other.placa == self.placa
+        return isinstance(other, Veiculo) and other.placa.upper() == self.placa.upper()
 
     # NE (not equals)
     def __ne__(self, other):
