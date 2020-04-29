@@ -1,5 +1,3 @@
-
-
 class Proprietario():
 
     # CONSTRUCTOR
@@ -30,3 +28,4 @@ class Proprietario():
     # STR (toString)
     def __str__(self):
         return self.nome + " (" + str(self.matricula) + ")"
+
