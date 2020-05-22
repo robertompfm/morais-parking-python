@@ -1,16 +1,23 @@
-from model.area_estacionamento import AreaEstacionamento
-from model.proprietario import Proprietario
-from model.veiculo import Veiculo
+from model.AreaEstacionamento import AreaEstacionamento
+from model.Proprietario import Proprietario
+from model.Veiculo import Veiculo
+from model.Usuario import Usuario
+from model.Ocorrencias import Ocorrencias
+from model.Eventos import Eventos
 
 class Estacionamento():
 
     # CONSTRUCTOR
     def __init__(self, capacidade):
         self.prop_cadastrados = list()
-        self.veiculos_cadastrados =list()
+        self.veiculos_cadastrados = list()
         self.areas_especiais = list()
+        self.cadastrar_usuario = list()
+        self.cadastrar_ocorrencia = list()
+        self.cadastrar_eventos = list()
         self.area_comum = AreaEstacionamento("Comum", capacidade)
         self.capacidade_maxima = capacidade
+
 
     # FIND METHODS
     def identificar_area(self, nome):
@@ -29,6 +36,24 @@ class Estacionamento():
         for veiculo in self.veiculos_cadastrados:
             if veiculo.get_placa().upper() == placa.upper():
                 return veiculo
+        return None
+
+    def identificar_ocorrencia(self, tipo):
+        for ocorrencia in self.cadastrar_ocorrencia:
+            if tipo == ocorrencia.get_tipo():
+                return ocorrencia
+        return None
+
+    def identificar_evento(self, nome_evento):
+        for evento in self.cadastrar_eventos:
+            if nome_evento == evento.get_nome_evento():
+                return evento
+        return None
+
+    def identificar_usuario(self, usuario_cadastrado):
+        for usuario in self.cadastrar_usuario:
+            if usuario.get_usuario() == usuario_cadastrado:
+                return usuario
         return None
 
     # REGISTER METHODS
@@ -61,6 +86,30 @@ class Estacionamento():
             proprietario = self.identificar_proprietario(nome_prop)
             veiculo = Veiculo(placa, modelo, cor, proprietario, nome_area)
             self.veiculos_cadastrados.append(veiculo)
+            return True
+        return False
+
+    def cadastro_ocorrencia(self, tipo, placa, quantidade_veiculos, data, hora, descricao):
+        ocorrencia = self.identificar_ocorrencia(tipo)
+        if ocorrencia is None:
+            ocorrencia = Ocorrencias(tipo, placa, quantidade_veiculos, data, hora, descricao)
+            self.cadastrar_ocorrencia.append(ocorrencia)
+            return True
+        return False
+
+    def cadastro_evento(self, nome_evento, data_inicial, data_final, vagas):
+        eventos = self.identificar_evento(nome_evento)
+        if eventos is None:
+            eventos = Eventos(nome_evento, data_inicial, data_final, vagas)
+            self.cadastrar_eventos.append(eventos)
+            return True
+        return False
+
+    def cadastro_usuario(self, nome, funcao, setor, matricula, usuario, senha):
+        mp_usuario = self.identificar_usuario(nome)
+        if mp_usuario is None:
+            mp_usuario = Usuario(nome, funcao, setor, matricula, usuario, senha)
+            self.cadastrar_usuario.append(mp_usuario)
             return True
         return False
 
@@ -130,6 +179,15 @@ class Estacionamento():
         )
         return status
 
+    # LOGIN METHOD
+    def login(self, usuario_cadastrado, senha_cadastrada):
+        for usuario in self.cadastrar_usuario:
+            if usuario_cadastrado == usuario.get_usuario() and senha_cadastrada == usuario.get_senha():
+                return True
+            else:
+                return False
+
+
     # GETTERS AND SETTERS
     def get_prop_cadastrados(self):
         return self.prop_cadastrados
@@ -161,6 +219,23 @@ class Estacionamento():
     def set_capacidade_maxima(self, capacidade_maxima):
         self.capacidade_maxima = capacidade_maxima
 
+    def get_cadastrar_usuario(self):
+        return self.cadastrar_usuario
+
+    def set_cadastrar_usuario(self, cadastrar_usuario):
+        self.cadastrar_usuario = cadastrar_usuario
+
+    def get_cadastrar_ocorrencia(self):
+        return self.cadastrar_ocorrencia
+
+    def set_cadastrar_ocorrencia(self, cadastrar_ocorrencia):
+        self.cadastrar_ocorrencia = cadastrar_ocorrencia
+
+    def get_cadastrar_eventos(self):
+        return self.cadastrar_eventos
+
+    def set_cadastrar_eventos(self, cadastrar_eventos):
+        self.cadastrar_eventos = cadastrar_eventos
 
 
 
