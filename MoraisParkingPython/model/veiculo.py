@@ -1,4 +1,4 @@
-rom model.proprietario import Proprietario
+from model.proprietario import Proprietario
 
 
 class Veiculo:

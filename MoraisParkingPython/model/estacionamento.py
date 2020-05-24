@@ -1,9 +1,9 @@
-from model.AreaEstacionamento import AreaEstacionamento
-from model.Proprietario import Proprietario
-from model.Veiculo import Veiculo
-from model.Usuario import Usuario
-from model.Ocorrencias import Ocorrencias
-from model.Eventos import Eventos
+from model.area_estacionamento import AreaEstacionamento
+from model.proprietario import Proprietario
+from model.veiculo import Veiculo
+from model.usuario import Usuario
+from model.ocorrencias import Ocorrencias
+from model.eventos import Eventos
 
 class Estacionamento():
 
