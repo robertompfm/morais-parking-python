@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e90d1310-06ca-45a1-938f-009e33d92e29" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/control/controller_login.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/data_usuarios.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/db_constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/view_constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Eventos.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/eventos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Ocorrencias.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/ocorrencias.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Usuario.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/usuario.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/estacionamento.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/estacionamento.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/veiculo.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/veiculo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
