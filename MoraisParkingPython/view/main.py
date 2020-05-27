@@ -1,25 +1,30 @@
-from model.veiculo import Veiculo
-from model.proprietario import Proprietario
-from model.area_estacionamento import AreaEstacionamento
-from model.estacionamento import Estacionamento
-from model.usuario import Usuario
-from model.constants import *
+from model.AreaEstacionamento import AreaEstacionamento
+from model.Estacionamento import Estacionamento
+from model.Constants import *
 
 from control.controller_login import ControllerLogin
+from control.controller_veiculos import ControllerVeiculos
+from control.controller_proprietario import ControllerProprietarios
+from control.controller_area import ControllerAreaEstacionamento
 
-from view.view_constants import *
+from View.view_constants import *
 
 morais_parking = Estacionamento(30)
 area_estacionamento = AreaEstacionamento("Carros", 10)
-carro = Veiculo("Larissa", 20192007035, "Sistemas para Internet", "Comum", "ABC1234")
+
 
 menu = "Escolha uma opção: "
 
 class Main():
     def __init__(self):
-        self.controller = ControllerLogin()
+        self.controllerLogin = ControllerLogin()
         self.usuario = None
-
+        self.controllerVeiculos = ControllerVeiculos()
+        self.veiculo = None
+        self.controllerProprietarios = ControllerProprietarios()
+        self.proprietario = None
+        self.controllerArea = ControllerAreaEstacionamento()
+        self.area = None
 
     def login(self):
         print("====== MORAIS PARKING ======")
@@ -42,7 +47,7 @@ class Main():
         email = input("Email: ")
         senha = input("Senha: ")
 
-        self.usuario = self.controller.sign_in(email, senha)
+        self.usuario = self.controllerLogin.sign_in(email, senha)
         if self.usuario is not None:
             print("OK")
             self.menu()
@@ -54,7 +59,6 @@ class Main():
         print("====== SIGN UP ======")
         usuario = input("Usuario: ")
         senha = input("Senha: ")
-
 
     def menu(self):
         tipo = self.usuario.get_setor()
@@ -182,19 +186,11 @@ class Main():
 
         elif op_menu == 3:
             placa = input("Placa: ")
-            veiculo = morais_parking.identificar_veiculo(placa)
-            if veiculo == None:
-                print("Veiculo nao cadastrado.")
-            else:
-                print(veiculo)
+            self.veiculo = self.controllerVeiculos.find_veiculo(placa)
 
         elif op_menu == 4:
             nome = input("Proprietário: ")
-            proprietario = morais_parking.identificar_proprietario(nome)
-            if proprietario == None:
-                print("Proprietario nao cadastrado")
-            else:
-                print(proprietario)
+            self.proprietario = self.controllerProprietarios.find_proprietarios(nome)
 
         elif op_menu == 5:
             nome = input("Área: ")
@@ -216,24 +212,16 @@ class Main():
         op_menu = int(input(MENU))
 
         if op_menu == 1:
-            nome = input("Proprietário: ")
-            matricula = int(input("Matrícula: "))
-            curso = input("Curso: ")
             placa = input("Placa: ")
             modelo = input("Modelo: ")
             cor = input("Cor: ")
+            proprietario = input("Proprietario: ")
             nome_area = input("Área: ")
-            if morais_parking.cadastrar_veiculo(nome, matricula, curso, placa, modelo, cor, nome_area):
-                print("Veiculo cadastrado com sucesso")
-            else:
-                print("Nao foi possivel cadastrar o veiculo")
+            self.veiculo = self.controllerVeiculos.register_veiculo(placa, modelo, cor, proprietario, nome_area)
 
         elif op_menu == 2:
             placa = input("Placa: ")
-            if morais_parking.excluir_veiculo(placa):
-                print("Veiculo removido do cadastro")
-            else:
-                print("Veiculo nao encontrado")
+            self.veiculo = self.controllerVeiculos.remove_veiculo(placa)
 
         else:
             print("Opção Inválida")
@@ -247,17 +235,12 @@ class Main():
             nome = input("Proprietário: ")
             matricula = int(input("Matrícula: "))
             curso = input("Curso: ")
-            if morais_parking.cadastrar_proprietario(nome, matricula, curso):
-                print("Proprietario cadastrado com sucesso")
-            else:
-                print("Nao foi possivel cadastrar o proprietario")
+            self.proprietario = self.controllerProprietarios.register_proprietario(nome, matricula, curso)
 
         elif op_menu == 2:
             nome = input("Proprietário: ")
-            if morais_parking.excluir_proprietario(nome):
-                print("Proprietario removido do cadastro")
-            else:
-                print("Proprietario nao encontrado no cadastro")
+            self.proprietario = self.controllerProprietarios.remove_proprietario(nome)
+
         else:
             print("Opção Inválida")
 
@@ -269,22 +252,17 @@ class Main():
         if op_menu == 1:
             nome = input("Nome da área: ")
             capacidade = int(input("Capacidade: "))
-            if morais_parking.cadastrar_area(nome, capacidade):
-                print("Area cadastrada com sucesso")
-            else:
-                print("Nao foi possivel cadastrar a area")
+            self.area = self.controllerArea.register_area(nome, capacidade)
 
         elif op_menu == 2:
             nome = input("Nome da área: ")
             area = morais_parking.identificar_area(nome)
-            if area == None:
-                print("Area nao encontrada")
-            else:
-                print(area)
+            self.area = self.controllerArea.find_area(nome)
+
 
         elif op_menu == 3:
             nome = input("Nome da área: ")
-            morais_parking.excluir_area(nome)
+            self.area = self.controllerArea.remove_area(nome)
 
         else:
             print("Opção Inválida")
