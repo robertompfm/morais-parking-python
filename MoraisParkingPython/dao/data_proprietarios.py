@@ -1,6 +1,6 @@
 import sqlite3
 from dao.db_constants import *
-from model.Proprietario import Proprietario
+from model.proprietario import Proprietario
 
 
 class DataProprietarios():
@@ -24,7 +24,7 @@ class DataProprietarios():
         except sqlite3.Error:
             return False
 
-    def insert_proprietarios(self, proprietario):
+    def insert_proprietario(self, proprietario):
         nome = proprietario.get_nome()
         matricula = proprietario.get_matricula()
         curso = proprietario.get_curso()
@@ -36,11 +36,11 @@ class DataProprietarios():
         except sqlite3.IntegrityError:
             return False
 
-    def query_proprietarios_by_nome(self, nome):
+    def query_proprietario_by_nome(self, nome):
         try:
-            self.c.execute(QUERY_PROPRIETARIOS_BY_NOME, (nome,))
+            self.c.execute(QUERY_PROPRIETARIO_BY_NOME, (nome,))
             proprietario_data = self.c.fetchone()
-            if proprietario_data is None:
+            if proprietario_data is not None:
                 nome = proprietario_data[0]
                 matricula = proprietario_data[1]
                 curso = proprietario_data[2]
@@ -50,11 +50,15 @@ class DataProprietarios():
 
     def delete_proprietario_by_nome(self, nome):
         try:
-            self.c.execute(QUERY_PROPRIETARIOS_BY_NOME, (nome,))
+            self.c.execute(QUERY_PROPRIETARIO_BY_NOME, (nome,))
             proprietario_data = self.c.fetchone()
-            if proprietario_data in None:
+            if proprietario_data is None:
                 return False
-            self.c.execute(DELETE_PROPRIETARIOS, (nome,))
+            self.c.execute(QUERY_PLACAS_BY_PROPRIETARIO, (nome,))
+            placas = self.c.fetchall()
+            for placa in placas:
+                self.c.execute(DELETE_VEICULO, (placa[0],))
+            self.c.execute(DELETE_PROPRIETARIO, (nome,))
             self.conn.commit()
             return True
         except sqlite3.Error:
@@ -70,17 +74,20 @@ class DataProprietarios():
 
 
 
-'''artur = Proprietario("Artur", "20192007000", "Sistemas para Internet")
-roberto = Proprietario("Roberto", "20192007001", "Sistemas para Internet")
-iria = Proprietario("Iria", "20192007002", "Sistemas para Internet")
-
-
-data_proprietarios = DataProprietarios()
-data_proprietarios.open()
-data_proprietarios.drop_proprietarios_table()
-data_proprietarios.create_proprietarios_table()
-data_proprietarios.insert_proprietarios(artur)
-data_proprietarios.insert_proprietarios(roberto)
-data_proprietarios.insert_proprietarios(iria)
-print(data_proprietarios.query_proprietarios_by_nome('Artur'))
-data_proprietarios.close()'''
+# arthur = Proprietario("Arthur", "20192007000", "Sistemas para Internet")
+# larissa = Proprietario("Arthur", "20192007001", "Sistemas para Internet")
+# roberto = Proprietario("Roberto", "20192007002", "Sistemas para Internet")
+# iria = Proprietario("Iria", "20192007003", "Sistemas para Internet")
+#
+#
+# data_proprietarios = DataProprietarios()
+# data_proprietarios.open()
+# # data_proprietarios.drop_proprietarios_table()
+# data_proprietarios.create_proprietarios_table()
+# data_proprietarios.insert_proprietario(arthur)
+# data_proprietarios.insert_proprietario(roberto)
+# data_proprietarios.insert_proprietario(iria)
+# # print(data_proprietarios.query_proprietario_by_nome('Arthur'))
+# # print(data_proprietarios.delete_proprietario_by_nome("Arthur"))
+# print(data_proprietarios.query_proprietario_by_nome('Arthur'))
+# data_proprietarios.close()

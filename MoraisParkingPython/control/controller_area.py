@@ -1,5 +1,5 @@
 from dao.data_area import DataAreaEstacionamento
-from model.AreaEstacionamento import AreaEstacionamento
+from model.area_estacionamento import AreaEstacionamento
 
 class ControllerAreaEstacionamento():
     def __init__(self):

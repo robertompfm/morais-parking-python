@@ -10,9 +10,9 @@ class ControllerLogin():
         usuario = Usuario(nome, email, senha, setor)
         success = self.data_usuarios.insert_usuario(usuario)
         if success:
-            print("Usuario cadastrado com sucesso!")
+            print("Funcionario cadastrado com sucesso!")
         else:
-            print("Nao foi possivel cadastrar o usuario.")
+            print("Nao foi possivel cadastrar o Funcionario.")
         self.data_usuarios.close()
         return success
 
@@ -20,15 +20,24 @@ class ControllerLogin():
         self.data_usuarios.open()
         usuario = self.data_usuarios.query_usuario_by_email(email)
         if usuario is None:
-            print("Email nao cadastrado")
+            print("Email nao encontrado")
         elif usuario.get_senha() != senha:
-            print("Usuario ou senha incorreta")
+            print("Funcionario ou senha incorreta")
             usuario = None
         self.data_usuarios.close()
         return usuario
 
-
-
+    def remove_user(self, email):
+        self.data_usuarios.open()
+        usuario = self.data_usuarios.query_usuario_by_email(email)
+        if usuario is None:
+            print("Email nao encontrado")
+            self.data_usuarios.close()
+            return False
+        if self.data_usuarios.delete_usuario_by_email(email):
+            print("Funcionario removido com sucesso!")
+            return True
+        return False
 
 # controller = ControllerLogin()
 # controller.sign_in("robertompfm@gmail.com", "beto")

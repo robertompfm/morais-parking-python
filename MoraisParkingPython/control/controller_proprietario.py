@@ -1,8 +1,8 @@
 from dao.data_proprietarios import DataProprietarios
-from model.Proprietario import Proprietario
+from model.proprietario import Proprietario
 
 
-class ControllerProprietarios():
+class ControllerProprietario():
 
     def __init__(self):
         self.data_proprietario = DataProprietarios()
@@ -10,7 +10,7 @@ class ControllerProprietarios():
     def register_proprietario(self, nome, matricula, curso):
         self.data_proprietario.open()
         proprietario = Proprietario(nome, matricula, curso)
-        success = self.data_proprietario.insert_proprietarios(proprietario)
+        success = self.data_proprietario.insert_proprietario(proprietario)
         if success:
             print("Prprietario cadastrado com sucesso!")
         else:
@@ -20,18 +20,25 @@ class ControllerProprietarios():
 
     def remove_proprietario(self, nome):
         self.data_proprietario.open()
-        proprietario = self.data_proprietario.delete_proprietario_by_nome(nome)
-        if proprietario:
-            print("Proprietario foi removido!")
+        success = self.data_proprietario.delete_proprietario_by_nome(nome)
+        if success:
+            print("Proprietario foi removido com sucesso!")
         else:
-            print("Não foi possivel remover o veiculo")
+            print("Não foi possivel remover o proprietario")
+        self.data_proprietario.close()
+        return success
+
+    def find_proprietario(self, nome):
+        self.data_proprietario.open()
+        proprietario = self.data_proprietario.query_proprietario_by_nome(nome)
+        if proprietario is None:
+            print("Proprietario não encontrado")
         self.data_proprietario.close()
         return proprietario
 
-    def find_proprietarios(self, nome):
-        self.data_proprietario.open()
-        proprietario = self.data_proprietario.query_proprietarios_by_nome(nome)
-        if proprietario is None:
-            print("Proprietario não cadastrado")
-        self.data_proprietario.close()
-        return proprietario
+
+controller = ControllerProprietario()
+controller.register_proprietario("Junior", 20192007004, "Sistemas para Internet")
+print(controller.find_proprietario("Junior"))
+controller.remove_proprietario("Junior")
+print(controller.find_proprietario("Junior"))

@@ -1,5 +1,5 @@
 from dao.data_veiculos import DataVeiculos
-from model.Veiculo import Veiculo
+from model.veiculo import Veiculo
 
 class ControllerVeiculos():
 

@@ -1,15 +1,16 @@
 from model.proprietario import Proprietario
+from model.constants import *
 
 
 class Veiculo:
 
     # CONSTRUTOR
-    def __init__(self, placa, modelo, cor, proprietario=Proprietario("Desconhecido", 0, "N/A"), nome_area="Comum"):
+    def __init__(self, placa, modelo, cor, proprietario=Proprietario("Desconhecido", 0, "N/A"), tipo=TIPO_VEICULO[1]):
         self.placa = placa
         self.proprietario = proprietario
         self.modelo = modelo
         self.cor = cor
-        self.nome_area = nome_area
+        self.tipo = tipo
 
     # GETTERS AND SETTERS
     def get_placa(self):
@@ -24,7 +25,7 @@ class Veiculo:
     def set_modelo(self, modelo):
         self.modelo = modelo
 
-    def get_cor(self, cor):
+    def get_cor(self):
         return self.cor
 
     def set_cor(self, cor):
@@ -36,16 +37,16 @@ class Veiculo:
     def set_proprietario(self, proprietario):
         self.proprietario = proprietario
 
-    def get_area(self):
-        return self.nome_area
+    def get_tipo(self):
+        return self.tipo
 
-    def set_area(self, nome_area):
-        self.nome_area = nome_area
+    def set_tipo(self, tipo):
+        self.tipo = tipo
 
     # STR (toString)
     def __str__(self):
         return "Veiculo: " + self.modelo + " " + self.cor + " (" + self.placa + \
-               ") ; Proprietario: " + str(self.proprietario)
+               "); Proprietario: " + str(self.proprietario)
 
     # EQ (equals)
     def __eq__(self, other):

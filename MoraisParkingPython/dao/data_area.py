@@ -1,6 +1,6 @@
 import sqlite3
 from dao.db_constants import *
-from model.AreaEstacionamento import AreaEstacionamento
+from model.area_estacionamento import AreaEstacionamento
 
 class DataAreaEstacionamento():
     def open(self):

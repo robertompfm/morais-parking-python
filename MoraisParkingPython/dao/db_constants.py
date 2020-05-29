@@ -29,48 +29,53 @@ QUERY_USUARIO_BY_EMAIL = "SELECT * FROM " + USUARIOS_TABLE + \
 # VEICULO
 DROP_VEICULOS_TABLE = "DROP TABLE IF EXISTS " + VEICULOS_TABLE
 CREATE_VEICULOS_TABLE = "CREATE TABLE IF NOT EXISTS " + VEICULOS_TABLE + \
-                        "(placa TEXT NOT NULL, " + \
+                        "(placa TEXT NOT NULL UNIQUE, " + \
                         "modelo TEXT NOT NULL, " + \
                         "cor TEXT NOT NULL, " + \
                         "proprietario TEXT NOT NULL, " + \
-                        "area TEXT NOT NULL)"
+                        "tipo TEXT NOT NULL)"
 
 INSERT_VEICULO = "INSERT INTO " + VEICULOS_TABLE + \
-                 "(placa, modelo, cor, proprietario, area )" + \
+                 "(placa, modelo, cor, proprietario, tipo)" + \
                  " VALUES (?, ?, ?, ?, ?)"
 
 DELETE_VEICULO = "DELETE FROM " + VEICULOS_TABLE + \
-                 "WHERE placa = ?"
+                 " WHERE placa = ?"
 
 QUERY_VEICULO_BY_PLACA = "SELECT * FROM " + VEICULOS_TABLE + \
-                         "WHERE placa = ?"
+                         " WHERE placa = ?"
+
+QUERY_PLACAS_BY_PROPRIETARIO = "SELECT placa FROM " + VEICULOS_TABLE + \
+                               " WHERE proprietario = ?"
+
 
 # PROPRIETARIO
 DROP_PROPRIETARIOS_TABLE = "DROP TABLE IF EXISTS " + PROPRIETARIOS_TABLE
 CREATE_PROPRIETARIOS_TABLE = "CREATE TABLE IF NOT EXISTS " + PROPRIETARIOS_TABLE + \
-                             "(nome TEXT NOT NULL, " + \
-                             "matricula TEXT NOT NULL, " + \
-                             "curso TEXT NOT NULL)"
+                             " (nome TEXT NOT NULL UNIQUE, " + \
+                             " matricula TEXT, " + \
+                             " curso TEXT)"
 
 INSERT_PROPRIETARIOS = "INSERT INTO " + PROPRIETARIOS_TABLE + \
                        "(nome, matricula, curso)" + \
-                       "VALUES (?, ?, ?)"
+                       " VALUES (?, ?, ?)"
 
-DELETE_PROPRIETARIOS = "DELETE FROM " + PROPRIETARIOS_TABLE + \
-                       "WHERE nome = ?"
+DELETE_PROPRIETARIO = "DELETE FROM " + PROPRIETARIOS_TABLE + \
+                       " WHERE nome = ?"
 
-QUERY_PROPRIETARIOS_BY_NOME = "SELECT * FROM " + PROPRIETARIOS_TABLE + \
-                              "WHERE nome = ?"
+QUERY_PROPRIETARIO_BY_NOME = "SELECT * FROM " + PROPRIETARIOS_TABLE + \
+                              " WHERE nome = ?"
+
 
 # AREA
 DROP_AREA_TABLE = "DROP TABLE IF EXISTS " + AREA_TABLE
 CREATE_AREA_TABLE = "CREATE TABLE IF NOT EXISTS " + AREA_TABLE + \
-                    "(nome TEXT NOT NULL, " + \
-                    "capacidade TEXT NOT NULL)"
+                    " (nome TEXT NOT NULL," + \
+                    " capacidade TEXT NOT NULL)"
 
 INSERT_AREA = "INSERT INTO " + AREA_TABLE + \
-              "(nome, capacidade)" + \
-              "VALUES (?, ?)"
+              " (nome, capacidade)" + \
+              " VALUES (?, ?)"
 
 DELETE_AREA = "DELETE FROM " + AREA_TABLE + \
               "WHERE nome = ?"
