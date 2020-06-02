@@ -6,6 +6,8 @@ USUARIOS_TABLE = "usuarios"
 VEICULOS_TABLE = "veiculos"
 PROPRIETARIOS_TABLE = "proprietarios"
 AREA_TABLE = "area"
+OCORRENCIAS_TABLE = "ocorrencias"
+EVENTOS_TABLE = "eventos"
 
 # USUARIO
 DROP_USUARIOS_TABLE = "DROP TABLE IF EXISTS " + USUARIOS_TABLE
@@ -33,10 +35,10 @@ CREATE_VEICULOS_TABLE = "CREATE TABLE IF NOT EXISTS " + VEICULOS_TABLE + \
                         "modelo TEXT NOT NULL, " + \
                         "cor TEXT NOT NULL, " + \
                         "proprietario TEXT NOT NULL, " + \
-                        "area TEXT NOT NULL)"
+                        "tipo TEXT NOT NULL)"
 
 INSERT_VEICULO = "INSERT INTO " + VEICULOS_TABLE + \
-                 "(placa, modelo, cor, proprietario, area )" + \
+                 "(placa, modelo, cor, proprietario, tipo )" + \
                  " VALUES (?, ?, ?, ?, ?)"
 
 DELETE_VEICULO = "DELETE FROM " + VEICULOS_TABLE + \
@@ -44,6 +46,9 @@ DELETE_VEICULO = "DELETE FROM " + VEICULOS_TABLE + \
 
 QUERY_VEICULO_BY_PLACA = "SELECT * FROM " + VEICULOS_TABLE + \
                          "WHERE placa = ?"
+
+QUERY_PLACAS_BY_PROPRIETARIO = "SELECT placa FROM " + VEICULOS_TABLE + \
+                               " WHERE proprietario = ?"
 
 # PROPRIETARIO
 DROP_PROPRIETARIOS_TABLE = "DROP TABLE IF EXISTS " + PROPRIETARIOS_TABLE
@@ -78,3 +83,37 @@ DELETE_AREA = "DELETE FROM " + AREA_TABLE + \
 QUERY_AREA_BY_NOME = "SELECT * FROM " + AREA_TABLE + \
                      "WHERE nome = ?"
 
+# OCORRENCIA
+DROP_OCORRENCIA_TABLE = "DROP TABLE IF EXISTS " + OCORRENCIAS_TABLE
+CREATE_OCORRENCIA_TABLE = "CREATE A TABLE IF NOT EXISTS " + OCORRENCIAS_TABLE + \
+                          "(tipo TEXT NOT NULL, " + \
+                          "placa TEXT NOT NULL, " + \
+                          "quantidade_veiculos TEXT NOT NULL, " + \
+                          "data TEXT NOT NULL," + \
+                          "hora TEXT NOT NULL, " \
+                          "descricao TEXT NOT NULL)"
+
+INSERT_OCORRENCIA = "INSERT INTO " + OCORRENCIAS_TABLE + \
+                    "(tipo, placa, quantidadeveiculos, data, hora, descricao)" + \
+                    "VALUES (?, ?, ?, ?, ?, ?)"
+
+QUERY_OCORRENCIA_BY_TIPO = "SELECT * FROM " + OCORRENCIAS_TABLE + \
+                           "WHERE tipo = ?"
+
+# EVENTOS
+DROP_EVENTO_TABLE = "DROP TABLE IF EXISTS " + EVENTOS_TABLE
+CREATE_EVENTO_TABLE = "CREATE A TABLE IF NOT EXISTS " + EVENTOS_TABLE + \
+                      "(nome_evento TEXT NOT NULL, " + \
+                      "data_inicial TEXT NOT NULL, " + \
+                      "data_final TEXT NOT NULL," + \
+                      "vagas TEXT NOT NULL)"
+
+INSERT_EVENTO = "INSERT INTO " + EVENTOS_TABLE + \
+                "(nome_evento, data_inicial, data_final, vagas)" + \
+                "VALUES (?, ?, ?, ?)"
+
+DELETE_EVENTO = "DELETE FROM " + EVENTOS_TABLE + \
+                "WHERE nome = ?"
+
+QUERY_EVENTO_BY_NOME = "SELECT * FROM " + EVENTOS_TABLE + \
+                       "WHERE nome = ?"
