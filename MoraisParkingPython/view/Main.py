@@ -308,7 +308,7 @@ class Main():
             self.eventos = self.controllerEventos.find_evento(nome_evento)
 
         elif op_menu == 3:
-            nome_evento = input("Nome evento: ")
+            nome_evento = input("Nome do evento: ")
             self.eventos = self.controllerEventos.remove_evento(nome_evento)
 
         else:
