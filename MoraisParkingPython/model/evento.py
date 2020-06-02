@@ -1,11 +1,13 @@
-class Eventos():
+class Evento():
 
     # CONSTRUTOR
-    def __init__(self, nome_evento, data_inicial, data_final, vagas):
+    def __init__(self, nome_evento, data_inicial, data_final, reservas=None):
+        if reservas is None:
+            reservas = dict()
         self.nome_evento = nome_evento
         self.data_inicial = data_inicial
         self.data_final = data_final
-        self.vagas = vagas
+        self.reservas = reservas
 
     # GETTERS AND SETTERS
     def get_nome_evento(self):
@@ -26,13 +28,16 @@ class Eventos():
     def set_data_final(self, data_final):
         self.data_final = data_final
 
-    def get_vagas(self):
-        return self.vagas
+    def get_reservas(self):
+        return self.reservas
 
-    def set_vagas(self, vagas):
-        self.vagas = vagas
+    def set_reservas(self, reservas):
+        self.reservas = reservas
+
+    def add_reserva(self, area, vagas):
+        self.reservas[area] = vagas
 
     # STR (toString)
     def __str__(self):
-        return "Nome do evento: " + self.nome_evento + "\nData inicial: " + self.data_inicial + \
-               "\nData Final: " + self.data_final + "\nVagas: " + self.vagas
+        return "Nome do evento: " + self.nome_evento + "\nData inicial: " + str(self.data_inicial) + \
+               "\nData Final: " + str(self.data_final)

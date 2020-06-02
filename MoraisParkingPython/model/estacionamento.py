@@ -3,7 +3,7 @@ from model.proprietario import Proprietario
 from model.veiculo import Veiculo
 from model.usuario import Usuario
 from model.ocorrencias import Ocorrencias
-from model.eventos import Eventos
+from model.evento import Evento
 
 class Estacionamento():
 
@@ -100,7 +100,7 @@ class Estacionamento():
     def cadastro_evento(self, nome_evento, data_inicial, data_final, vagas):
         eventos = self.identificar_evento(nome_evento)
         if eventos is None:
-            eventos = Eventos(nome_evento, data_inicial, data_final, vagas)
+            eventos = Evento(nome_evento, data_inicial, data_final, vagas)
             self.cadastrar_eventos.append(eventos)
             return True
         return False
@@ -160,7 +160,7 @@ class Estacionamento():
         if self.area_comum.remover_veiculo(veiculo):
             return True
         for area in self.areas_especiais:
-            if area.remover_veiculo(veiculo):
+            if area.remover_permissao(veiculo):
                 return True
         return False
 

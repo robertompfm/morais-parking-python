@@ -57,6 +57,7 @@ class DataProprietarios():
             self.c.execute(QUERY_PLACAS_BY_PROPRIETARIO, (nome,))
             placas = self.c.fetchall()
             for placa in placas:
+                self.c.execute(DELETE_PERMISSOES_BY_VEICULO, (placa[0],))
                 self.c.execute(DELETE_VEICULO, (placa[0],))
             self.c.execute(DELETE_PROPRIETARIO, (nome,))
             self.conn.commit()

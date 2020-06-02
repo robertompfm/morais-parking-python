@@ -62,12 +62,24 @@ class DataVeiculos():
         except sqlite3.Error as e:
             return None
 
+    def query_placas_by_proprietario(self, proprietario_nome):
+        try:
+            self.c.execute(QUERY_PLACAS_BY_PROPRIETARIO, (proprietario_nome,))
+            placas_data = self.c.fetchall()
+            placas = []
+            for placa_data in placas_data:
+                placas.append(placa_data[0])
+            return placas
+        except:
+            return []
+
     def delete_veiculo_by_placa(self, placa):
         try:
             self.c.execute(QUERY_VEICULO_BY_PLACA, (placa,))
             veiculo_data = self.c.fetchone()
             if veiculo_data is None:
                 return False
+            self.c.execute(DELETE_PERMISSOES_BY_VEICULO, (placa,))
             self.c.execute(DELETE_VEICULO, (placa,))
             self.conn.commit()
             return True
@@ -102,5 +114,7 @@ class DataVeiculos():
 # print(data_veiculos.query_veiculo_by_placa("ABC1234"))
 # # data_veiculos.delete_veiculo_by_placa("ABC1234")
 # print(data_veiculos.query_veiculo_by_placa("ABC1234"))
+# for placa in data_veiculos.query_placas_by_proprietario("Junior"):
+#     print(placa)
 # data_veiculos.close()
 

@@ -5,7 +5,10 @@ DB_NAME = "../morais_parking.db"
 USUARIOS_TABLE = "usuarios"
 VEICULOS_TABLE = "veiculos"
 PROPRIETARIOS_TABLE = "proprietarios"
-AREA_TABLE = "area"
+AREAS_TABLE = "areas"
+PERMISSOES_TABLE = "permissoes"
+EVENTOS_TABLE = "eventos"
+RESERVAS_TABLE = "reservas"
 
 # USUARIO
 DROP_USUARIOS_TABLE = "DROP TABLE IF EXISTS " + USUARIOS_TABLE
@@ -68,18 +71,97 @@ QUERY_PROPRIETARIO_BY_NOME = "SELECT * FROM " + PROPRIETARIOS_TABLE + \
 
 
 # AREA
-DROP_AREA_TABLE = "DROP TABLE IF EXISTS " + AREA_TABLE
-CREATE_AREA_TABLE = "CREATE TABLE IF NOT EXISTS " + AREA_TABLE + \
-                    " (nome TEXT NOT NULL," + \
-                    " capacidade TEXT NOT NULL)"
+DROP_AREAS_TABLE = "DROP TABLE IF EXISTS " + AREAS_TABLE
+CREATE_AREAS_TABLE = "CREATE TABLE IF NOT EXISTS " + AREAS_TABLE + \
+                    " (nome TEXT NOT NULL UNIQUE," + \
+                    " ocupacao INTEGER NOT NULL," + \
+                    " capacidade INTEGER NOT NULL," + \
+                    " tipo TEXT NOT NULL," + \
+                    " especial INTEGER NOT NULL)"
 
-INSERT_AREA = "INSERT INTO " + AREA_TABLE + \
-              " (nome, capacidade)" + \
-              " VALUES (?, ?)"
+INSERT_AREA = "INSERT INTO " + AREAS_TABLE + \
+              " (nome, ocupacao, capacidade, tipo, especial)" + \
+              " VALUES (?, ?, ?, ?, ?)"
 
-DELETE_AREA = "DELETE FROM " + AREA_TABLE + \
-              "WHERE nome = ?"
+DELETE_AREA = "DELETE FROM " + AREAS_TABLE + \
+              " WHERE nome = ?"
 
-QUERY_AREA_BY_NOME = "SELECT * FROM " + AREA_TABLE + \
-                     "WHERE nome = ?"
+QUERY_AREA_BY_NOME = "SELECT * FROM " + AREAS_TABLE + \
+                     " WHERE nome = ?"
+
+QUERY_SPECIAL_AREAS = "SELECT * FROM " + AREAS_TABLE + \
+                      " WHERE especial = ?"
+
+QUERY_ALL_AREAS = "SELECT * FROM " + AREAS_TABLE
+
+QUERY_AREAS_COMPATIVEIS = "SELECT * FROM " + AREAS_TABLE + \
+                          " WHERE especial = ? AND tipo = ?"
+
+
+# PERMISSOES
+DROP_PERMISSOES_TABLE = "DROP TABLE IF EXISTS " + PERMISSOES_TABLE
+CREATE_PERMISSOES_TABLE = "CREATE TABLE IF NOT EXISTS " + PERMISSOES_TABLE + \
+                    " (veiculo_placa TEXT NOT NULL," + \
+                    " area_nome TEXT NOT NULL)"
+
+INSERT_PERMISSAO = "INSERT INTO " + PERMISSOES_TABLE + \
+                   " (veiculo_placa, area_nome) VALUES (?, ?)"
+
+DELETE_PERMISSAO = "DELETE FROM " + PERMISSOES_TABLE + \
+                   " WHERE veiculo_placa = ? AND area_nome = ?"
+
+DELETE_PERMISSOES_BY_VEICULO = "DELETE FROM " + PERMISSOES_TABLE + \
+                               " WHERE veiculo_placa = ?"
+
+DELETE_PERMISSOES_BY_AREA = "DELETE FROM " + PERMISSOES_TABLE + \
+                            " WHERE area_nome = ?"
+
+QUERY_PERMISSAO = "SELECT * FROM " + PERMISSOES_TABLE + \
+                 " WHERE veiculo_placa = ? AND area_nome = ?"
+
+QUERY_PERMISSOES_BY_VEICULO = "SELECT * FROM " + PERMISSOES_TABLE + \
+                              " WHERE veiculo_placa = ?"
+
+
+# EVENTOS
+DROP_EVENTOS_TABLE = "DROP TABLE IF EXISTS " + EVENTOS_TABLE
+CREATE_EVENTOS_TABLE = "CREATE TABLE IF NOT EXISTS " + EVENTOS_TABLE + \
+                    " (nome TEXT NOT NULL UNIQUE," + \
+                    " inicio TEXT NOT NULL UNIQUE," + \
+                    " fim TEXT NOT NULL UNIQUE)"
+
+INSERT_EVENTO = "INSERT INTO " + EVENTOS_TABLE + \
+                " (nome, inicio, fim) VALUES (?, ?, ?)"
+
+DELETE_EVENTO = "DELETE FROM " + EVENTOS_TABLE + \
+                " WHERE nome = ?"
+
+QUERY_EVENTO_BY_NAME = "SELECT * FROM " + EVENTOS_TABLE + \
+                       " WHERE nome = ?"
+
+QUERY_ALL_EVENTOS = "SELECT * FROM " + EVENTOS_TABLE
+
+
+# RESERVAS
+DROP_RESERVAS_TABLE = "DROP TABLE IF EXISTS " + RESERVAS_TABLE
+CREATE_RESERVAS_TABLE = "CREATE TABLE IF NOT EXISTS " + RESERVAS_TABLE + \
+                        " (evento_nome TEXT NOT NULL," + \
+                        " area_nome TEXT NOT NULL," + \
+                        " vagas INTEGER NOT NULL)"
+
+INSERT_RESERVA = "INSERT INTO " + RESERVAS_TABLE + \
+                 " (evento_nome, area_nome, vagas) VALUES (?, ?, ?)"
+
+DELETE_RESERVAS_BY_EVENTO = "DELETE FROM " + RESERVAS_TABLE + \
+                            " WHERE evento_nome = ?"
+
+DELETE_RESERVAS_BY_AREA = "DELETE FROM " + RESERVAS_TABLE + \
+                          " WHERE area_nome = ?"
+
+QUERY_RESERVAS_BY_EVENTO = "SELECT * FROM " + RESERVAS_TABLE + \
+                           " WHERE evento_nome = ?"
+
+QUERY_RESERVA = "SELECT * FROM " + RESERVAS_TABLE + \
+                " WHERE evento_nome = ? AND area_nome = ?"
+
 

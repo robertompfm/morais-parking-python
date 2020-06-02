@@ -5,7 +5,11 @@ from model.constants import *
 class Veiculo:
 
     # CONSTRUTOR
-    def __init__(self, placa, modelo, cor, proprietario=Proprietario("Desconhecido", 0, "N/A"), tipo=TIPO_VEICULO[1]):
+    def __init__(self, placa, modelo, cor, proprietario=None, tipo=None):
+        if proprietario is None:
+            proprietario = Proprietario("Desconhecido", 0, "N/A")
+        if tipo is None:
+            tipo = TIPO_VEICULO[1]
         self.placa = placa
         self.proprietario = proprietario
         self.modelo = modelo

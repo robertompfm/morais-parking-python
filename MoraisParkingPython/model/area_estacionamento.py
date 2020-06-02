@@ -56,10 +56,20 @@ class AreaEstacionamento():
         return self.especial
 
     def get_ocupacao(self):
-        return self.tipo
+        return self.ocupacao
 
     def set_ocupacao(self, ocupacao):
         self.ocupacao = ocupacao
+
+    # HASH
+    def __hash__(self):
+        return hash(self.nome)
+
+    def __eq__(self, other):
+        return isinstance(other, AreaEstacionamento) and self.nome == other.nome
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
 
     # STR (toString)
     def __str__(self):
