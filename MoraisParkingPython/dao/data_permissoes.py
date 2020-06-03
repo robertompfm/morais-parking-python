@@ -36,15 +36,14 @@ class DataPermissoes():
         except sqlite3.IntegrityError:
             return False
 
-    def query_permissoes_by_placa(self, placa):
+    def query_permissao_by_placa(self, placa):
         try:
             self.c.execute(QUERY_PERMISSOES_BY_VEICULO, (placa,))
-            permissoes_data = self.c.fetchall()
-            permissoes = []
-            for permissao_data in permissoes_data:
-                permissao = (permissao_data[0], permissao_data[1])
-                permissoes.append(permissao)
-            return permissoes
+            permissao_data = self.c.fetchone()
+            if permissao_data is None:
+                return None
+            permissao = (permissao_data[0], permissao_data[1])
+            return permissao
         except sqlite3.Error:
             return None
 

@@ -2,31 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e90d1310-06ca-45a1-938f-009e33d92e29" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/control/controller_eventos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/control/controller_permissoes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/data_eventos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/data_permissoes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/data_reservas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/funcoes_acesso.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/funcoes_areas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/funcoes_eventos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/funcoes_permissoes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/funcoes_veiculo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/control/controller_estacionamento.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/data_estacionamento.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/funcoes_estacionamento.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/control/controller_area.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/controller_area.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/controller_proprietario.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/controller_proprietario.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/controller_veiculos.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/controller_veiculos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/data_area.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/data_area.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/data_proprietarios.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/data_proprietarios.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/data_veiculos.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/data_veiculos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/controller_permissoes.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/controller_permissoes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/data_permissoes.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/data_permissoes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/data_reservas.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/data_reservas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/db_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/db_constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/area_estacionamento.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/area_estacionamento.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/estacionamento.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/estacionamento.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/eventos.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/evento.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/veiculo.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/veiculo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/morais_parking.db" beforeDir="false" afterPath="$PROJECT_DIR$/morais_parking.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/main_oo.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/main_oo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/funcoes_acesso.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/funcoes_eventos.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/funcoes_eventos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/funcoes_permissoes.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/funcoes_permissoes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +42,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="Python.funcoes_acesso">
-    <configuration name="data_eventos" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.funcoes_estacionamento">
+    <configuration name="data_permissoes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MoraisParkingPython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -67,7 +55,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dao/data_eventos.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dao/data_permissoes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -97,7 +85,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="funcoes_acesso" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="funcoes_estacionamento" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MoraisParkingPython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -109,7 +97,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/view/funcoes_acesso.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/view/funcoes_estacionamento.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -162,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.funcoes_acesso" />
-        <item itemvalue="Python.funcoes_eventos" />
-        <item itemvalue="Python.funcoes_permissoes" />
+        <item itemvalue="Python.funcoes_estacionamento" />
         <item itemvalue="Python.data_reservas" />
-        <item itemvalue="Python.data_eventos" />
+        <item itemvalue="Python.funcoes_permissoes" />
+        <item itemvalue="Python.data_permissoes" />
+        <item itemvalue="Python.funcoes_eventos" />
       </list>
     </recent_temporary>
   </component>
@@ -201,25 +189,25 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053/265.1080.1366.768@67.27.1853.1053" timestamp="1590759471748" />
-    <state width="1830" height="278" key="GridCell.Tab.0.bottom" timestamp="1591053104415">
+    <state width="1830" height="278" key="GridCell.Tab.0.bottom" timestamp="1591143406759">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="278" key="GridCell.Tab.0.bottom/67.27.1853.1053/265.1080.1366.768@67.27.1853.1053" timestamp="1591053104415" />
+    <state width="1830" height="278" key="GridCell.Tab.0.bottom/67.27.1853.1053/265.1080.1366.768@67.27.1853.1053" timestamp="1591143406759" />
     <state width="1830" height="278" key="GridCell.Tab.0.bottom/67.27.1853.1053/283.1080.1366.768@67.27.1853.1053" timestamp="1588171232113" />
-    <state width="1830" height="278" key="GridCell.Tab.0.center" timestamp="1591053104415">
+    <state width="1830" height="278" key="GridCell.Tab.0.center" timestamp="1591143406759">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="278" key="GridCell.Tab.0.center/67.27.1853.1053/265.1080.1366.768@67.27.1853.1053" timestamp="1591053104415" />
+    <state width="1830" height="278" key="GridCell.Tab.0.center/67.27.1853.1053/265.1080.1366.768@67.27.1853.1053" timestamp="1591143406759" />
     <state width="1830" height="278" key="GridCell.Tab.0.center/67.27.1853.1053/283.1080.1366.768@67.27.1853.1053" timestamp="1588171232113" />
-    <state width="1830" height="278" key="GridCell.Tab.0.left" timestamp="1591053104415">
+    <state width="1830" height="278" key="GridCell.Tab.0.left" timestamp="1591143406759">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="278" key="GridCell.Tab.0.left/67.27.1853.1053/265.1080.1366.768@67.27.1853.1053" timestamp="1591053104415" />
+    <state width="1830" height="278" key="GridCell.Tab.0.left/67.27.1853.1053/265.1080.1366.768@67.27.1853.1053" timestamp="1591143406759" />
     <state width="1830" height="278" key="GridCell.Tab.0.left/67.27.1853.1053/283.1080.1366.768@67.27.1853.1053" timestamp="1588171232112" />
-    <state width="1830" height="278" key="GridCell.Tab.0.right" timestamp="1591053104415">
+    <state width="1830" height="278" key="GridCell.Tab.0.right" timestamp="1591143406759">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="278" key="GridCell.Tab.0.right/67.27.1853.1053/265.1080.1366.768@67.27.1853.1053" timestamp="1591053104415" />
+    <state width="1830" height="278" key="GridCell.Tab.0.right/67.27.1853.1053/265.1080.1366.768@67.27.1853.1053" timestamp="1591143406759" />
     <state width="1830" height="278" key="GridCell.Tab.0.right/67.27.1853.1053/283.1080.1366.768@67.27.1853.1053" timestamp="1588171232113" />
     <state x="482" y="187" key="SettingsEditor" timestamp="1590249436829">
       <screen x="67" y="27" width="1853" height="1053" />

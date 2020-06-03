@@ -28,11 +28,11 @@ class ControllerPermissoes():
         self.data_permissoes.close()
         return success
 
-    def find_permissoes_by_placa(self, placa):
+    def find_permissao_by_placa(self, placa):
         self.data_permissoes.open()
-        permissoes = self.data_permissoes.query_permissoes_by_placa(placa)
+        permissao = self.data_permissoes.query_permissao_by_placa(placa)
         self.data_permissoes.close()
-        return permissoes
+        return permissao
 
     def find_permissao(self, permissao):
         self.data_permissoes.open()

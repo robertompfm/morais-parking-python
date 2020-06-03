@@ -29,6 +29,10 @@ def conceder_permissao():
     try:
         placa = placas[(int(input("Escolha o indice da placa do veiculo: ")) - 1)]
         veiculo = controller_veiculo.find_veiculo(placa)
+        permissao = controller_permissoes.find_permissao_by_placa(placa)
+        if permissao is not None:
+            print("O veiculo ja possui uma permissao especial")
+            return
         areas = controller_areas.find_compatible_special_areas(veiculo.get_tipo())
         if len(areas) <= 0:
             print("Nao existem areas especiais compativeis com o veiculo")
@@ -61,7 +65,7 @@ def remover_permissao():
     print(placas_str)
     try:
         placa = placas[(int(input("Escolha o indice da placa do veiculo: ")) - 1)]
-        permissoes = controller_permissoes.find_permissoes_by_placa(placa)
+        permissoes = controller_permissoes.find_permissao_by_placa(placa)
         if len(permissoes) <= 0:
             print("O veiculo nao possui permissoes para estacionar em areas especiais")
             return

@@ -36,9 +36,9 @@ def cadastrar_evento():
         print("A data final nao pode ser antes da data de inicio")
         return
 
-    # if inicio <= datetime.now().date():
-    #     print("Um novo evento so pode ser cadastrado para datas futuras")
-    #     return
+    if inicio <= datetime.now().date():
+        print("Um novo evento so pode ser cadastrado para datas futuras")
+        return
 
     evento = Evento(evento_nome, inicio, fim)
 

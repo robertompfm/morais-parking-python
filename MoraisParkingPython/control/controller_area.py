@@ -54,6 +54,12 @@ class ControllerAreaEstacionamento():
         self.data_area.close()
         return areas
 
+    def find_compatible_common_area(self, tipo):
+        self.data_area.open()
+        areas = self.data_area.query_areas_comuns_compativeis(tipo)
+        self.data_area.close()
+        return areas[0]
+
 # controller = ControllerAreaEstacionamento()
 # deficientes = controller.find_area("Deficientes")
 # print(deficientes)

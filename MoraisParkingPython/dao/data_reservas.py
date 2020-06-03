@@ -42,7 +42,7 @@ class DataReservas():
             reservas_data = self.c.fetchall()
             reservas = {}
             for reserva_data in reservas_data:
-                self.c.execute(QUERY_AREA_BY_NOME, (reserva_data[1]))
+                self.c.execute(QUERY_AREA_BY_NOME, (reserva_data[1],))
                 area_data = self.c.fetchone()
                 nome = area_data[0]
                 ocupacao = area_data[1]
