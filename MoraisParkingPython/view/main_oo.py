@@ -1,11 +1,4 @@
-from model.area_estacionamento import AreaEstacionamento
-from model.estacionamento import Estacionamento
-from model.constants import *
-
-from control.controller_login import ControllerLogin
-from control.controller_veiculos import ControllerVeiculos
-from control.controller_proprietario import ControllerProprietario
-from control.controller_area import ControllerAreaEstacionamento
+from model.relatorio import Relatorio
 
 from view.view_constants import *
 from view.funcoes_funcionario import *
@@ -14,14 +7,8 @@ from view.funcoes_veiculo import *
 from view.funcoes_areas import *
 from view.funcoes_permissoes import *
 from view.funcoes_eventos import *
-
-morais_parking = Estacionamento(30)
-area_estacionamento = AreaEstacionamento("Carros", 10)
-
-
-menu = "Escolha uma opção: "
-
-
+from view.funcoes_estacionamento import *
+from view.funcoes_ocorrencias import *
 
 
 class Main():
@@ -35,6 +22,8 @@ class Main():
         self.veiculo = None
         self.proprietario = None
         self.area = None
+
+        inicializar_relatorio()
 
     def start(self):
         print("\n====== MORAIS PARKING ======")
@@ -53,13 +42,6 @@ class Main():
         self.usuario = login()
         self.menu()
 
-    # def sign_up(self):
-    #     print("====== NOVO USUARIO ======")
-    #     nome = input("Nome: ")
-    #     email = input("Email: ")
-    #     senha = input("Senha: ")
-    #     print("[1] ")
-    #
 
     def menu(self):
         if self.usuario is None:
@@ -111,29 +93,35 @@ class Main():
 
 
     def menu_estacionamento(self):
-        op_menu = -1
-        while op_menu != 6:
-            print("====== MORAIS PARKING ======")
-            print("[1]Estacionamento",
-                  "\n[2] Veículo",
-                  "\n[3] Proprietário",
-                  "\n[4] Ocorrências"
-                  "\n[5] Eventos"
-                  "\n[6] Sair")
+        opcoes = {
+            1: consultar_status,
+            2: autorizar_entrada,
+            3: autorizar_saida,
+            4: cadastrar_proprietario,
+            5: remover_proprietario,
+            6: cadastrar_veiculo,
+            7: remover_veiculo,
+            8: registrar_ocorrencia,
+            9: self.logout
+        }
+        print("\n====== MENU RH ======")
+        print("[1] Consultar status",
+              "\n[2] Autorizar entrada",
+              "\n[3] Autorizar saida",
+              "\n[4] Cadastrar proprietario",
+              "\n[5] Remover proprietario",
+              "\n[3] Cadastrar veiculo",
+              "\n[7] Remover veiculo",
+              "\n[8] Registrar ocorrencia",
+              "\n[9] Logout")
 
+        try:
             op_menu = int(input(MENU))
-            if op_menu == 1:
-                self.mp_estacionamento()
-            elif op_menu == 2:
-                self.mp_veiculo()
-            elif op_menu == 3:
-                self.mp_proprietario()
-            elif op_menu == 4:
-                self.mp_ocorrencias()
-            elif op_menu == 5:
-                self.mp_eventos()
-            else:
-                break
+            opcoes[op_menu]()
+        except:
+            print("Opcao invalida")
+            self.menu_rh()
+        self.menu()
 
 
     def menu_gestor(self):
@@ -167,4 +155,3 @@ class Main():
 
 main = Main()
 main.start()
-

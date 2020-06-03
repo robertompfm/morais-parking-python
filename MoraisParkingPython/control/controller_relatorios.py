@@ -1,4 +1,4 @@
-from model.Estacionamento import Estacionamento
+from model.estacionamento import Estacionamento
 estacionamento = Estacionamento(30)
 
 def status_estacionamento():

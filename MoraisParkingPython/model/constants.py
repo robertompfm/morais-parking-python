@@ -12,3 +12,14 @@ TIPO_VEICULO = {
     2: "Motocicleta",
     3: "Onibus"
 }
+
+# OCORRENCIAS
+TIPO_OCORRENCIA = {
+    1: "Batida",
+    2: "Furto ou assalto",
+    3: "Estacionamento indevido",
+    4: "Inundacao",
+    5: "Dano ao veiculo",
+    6: "Outros"
+}
+

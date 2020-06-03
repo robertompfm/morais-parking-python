@@ -9,6 +9,7 @@ from model.constants import *
 from model.evento import Evento
 from model.area_estacionamento import AreaEstacionamento
 from model.veiculo import Veiculo
+from model.relatorio import Relatorio
 
 from datetime import datetime
 
@@ -73,6 +74,8 @@ def autorizar_entrada():
     else:
         print("Entrada nao autorizada")
 
+    update_relatorio()
+
 
 
 def autorizar_saida():
@@ -111,7 +114,40 @@ def consultar_status():
     print("\nTOTAL: {0} / {1} ({2:.2f}%)".format(total_ocupacao, total_capacidade, (total_ocupacao/total_capacidade)))
 
 
+def update_relatorio():
+    ocupacoes_max = Relatorio.get_ocupacoes_max()
+    evento = Relatorio.get_evento()
+
+    for area, ocupacao_max in ocupacoes_max.items():
+        ocupacao = len(controller_estacionamento.find_placas_by_area(area.get_nome()))
+        if evento is not None:
+            ocupacao += evento.get_reservas()[area]
+        area.set_ocupacao(ocupacao)
+        if ocupacao_max <= ocupacao:
+            ocupacoes_max[area] = ocupacao
+
+    Relatorio.set_ocupacoes_max(ocupacoes_max)
+
+
+def inicializar_relatorio():
+    evento = controller_eventos.find_todays_evento()
+    Relatorio.set_evento(evento)
+
+    areas = controller_areas.find_all_areas()
+    ocupacoes_max = dict()
+    for area in areas:
+        ocupacao = len(controller_estacionamento.find_placas_by_area(area.get_nome()))
+        if evento is not None:
+            ocupacao += evento.get_reservas()[area]
+        area.set_ocupacao(ocupacao)
+        ocupacoes_max[area] = ocupacao
+
+    Relatorio.set_ocupacoes_max(ocupacoes_max)
 
 # autorizar_entrada()
 # autorizar_saida()
-consultar_status()
+# consultar_status()
+
+
+# inicializar_relatorio()
+# update_relatorio()
