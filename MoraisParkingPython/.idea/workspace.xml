@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e90d1310-06ca-45a1-938f-009e33d92e29" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/control/controller_estacionamento.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/data_estacionamento.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/funcoes_estacionamento.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/controller_area.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/controller_area.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/controller_permissoes.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/controller_permissoes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/data_permissoes.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/data_permissoes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/data_reservas.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/data_reservas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/control/controller_ocorrencias.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/data_ocorrencia.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/controller_eventos.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/controller_eventos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/data_eventos.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/data_eventos.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/db_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/db_constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/morais_parking.db" beforeDir="false" afterPath="$PROJECT_DIR$/morais_parking.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/funcoes_acesso.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/funcoes_eventos.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/funcoes_eventos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/funcoes_permissoes.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/funcoes_permissoes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

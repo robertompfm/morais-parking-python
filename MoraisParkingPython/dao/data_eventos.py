@@ -107,3 +107,4 @@ class DataEventos():
 
 # print((datetime.strptime("2020-05-25", "%Y-%m-%d")).date())
 # print((datetime.strptime("2020-05-30", "%Y-%m-%d")).date() <= datetime.now().date())
+
