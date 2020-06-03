@@ -3,7 +3,6 @@ from control.controller_proprietario import ControllerProprietario
 from control.controller_permissoes import ControllerPermissoes
 from control.controller_area import ControllerAreaEstacionamento
 
-from model.constants import *
 
 controller_veiculo = ControllerVeiculos()
 controller_proprietario = ControllerProprietario()
@@ -80,5 +79,4 @@ def remover_permissao():
         print("Input invalido. Voce precisa inserir um indice valido")
 
 
-# conceder_permissao()
-# remover_permissao()
+

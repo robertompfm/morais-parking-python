@@ -1,4 +1,3 @@
-from model.relatorio import Relatorio
 
 from view.view_constants import *
 from view.funcoes_funcionario import *
@@ -14,10 +13,6 @@ from view.funcoes_relatorio import *
 
 class Main():
     def __init__(self):
-        self.controllerLogin = ControllerLogin()
-        self.controllerVeiculos = ControllerVeiculos()
-        self.controllerProprietarios = ControllerProprietario()
-        self.controllerArea = ControllerAreaEstacionamento()
 
         self.usuario = None
         self.veiculo = None
@@ -80,8 +75,8 @@ class Main():
               "\n[4] Remover veiculo",
               "\n[5] Conceder permissao",
               "\n[6] Remover proprietario",
-              "\n[7] Cadastrar veiculo",
-              "\n[8] Remover veiculo",
+              "\n[7] Cadastrar funcionario",
+              "\n[8] Remover funcionario",
               "\n[9] Logout")
 
         try:
@@ -105,13 +100,13 @@ class Main():
             8: registrar_ocorrencia,
             9: self.logout
         }
-        print("\n====== MENU RH ======")
+        print("\n====== MENU ESTACIONAMENTO ======")
         print("[1] Consultar status",
               "\n[2] Autorizar entrada",
               "\n[3] Autorizar saida",
               "\n[4] Cadastrar proprietario",
               "\n[5] Remover proprietario",
-              "\n[3] Cadastrar veiculo",
+              "\n[6] Cadastrar veiculo",
               "\n[7] Remover veiculo",
               "\n[8] Registrar ocorrencia",
               "\n[9] Logout")
@@ -136,7 +131,7 @@ class Main():
             7: gerar_relatorio,
             8: self.logout
         }
-        print("\n====== MENU RH ======")
+        print("\n====== MENU GESTAO ======")
         print("[1] Cadastrar funcionario",
               "\n[2] Remover funcionario",
               "\n[3] Cadastrar area especial",

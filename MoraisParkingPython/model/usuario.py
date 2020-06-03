@@ -44,5 +44,10 @@ class Usuario:
         return "Nome: " + self.nome + "\nSetor: " + self.setor + \
                "\nEmail: " + self.email + "\nSenha: " + self.senha
 
+    # EQ (eqquals)
     def __eq__(self, outro):
         return isinstance(outro, Usuario) and outro.email == self.email
+
+    # NE (not equals)
+    def __ne__(self, other):
+        return not self == other

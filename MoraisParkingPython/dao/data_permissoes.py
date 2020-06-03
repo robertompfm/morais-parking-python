@@ -1,7 +1,6 @@
 import sqlite3
 from dao.db_constants import *
-from model.area_estacionamento import AreaEstacionamento
-from model.constants import *
+
 
 
 class DataPermissoes():
@@ -87,15 +86,3 @@ class DataPermissoes():
             return False
 
 
-# data_permissoes = DataPermissoes()
-# data_permissoes.open()
-# data_permissoes.drop_permissoes_table()
-# data_permissoes.create_permissoes_table()
-# data_permissoes.insert_permissao(("CBA4321", "Deficientes"))
-# data_permissoes.insert_permissao(("CBA4321", "VIP"))
-# for permissao in data_permissoes.query_permissoes_by_placa("CBA4321"):
-#     print(permissao)
-# print(data_permissoes.query_permissao(("CBA4321", "VIP")))
-# # print(data_permissoes.delete_permissoes_by_veiculo(("CBA4321")))
-#
-# data_permissoes.close()

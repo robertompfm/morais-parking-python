@@ -30,5 +30,3 @@ def remover_veiculo():
     controller_veiculo.remove_veiculo(placa)
 
 
-# cadastrar_veiculo()
-# remover_veiculo()

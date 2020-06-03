@@ -1,7 +1,5 @@
 from dao.data_permissoes import DataPermissoes
-from model.area_estacionamento import AreaEstacionamento
-from model.veiculo import Veiculo
-from model.constants import *
+
 
 class ControllerPermissoes():
     def __init__(self):
@@ -40,11 +38,5 @@ class ControllerPermissoes():
         self.data_permissoes.close()
         return result
 
-# controller = ControllerPermissoes()
-# permissoes = controller.find_permissoes_by_placa("CBA4321")
-# for permissao in permissoes:
-#     print(permissao)
-# permissoes = controller.find_permissoes_by_placa("XXX0000")
-# for permissao in permissoes:
-#     print(permissao)
+
 

@@ -38,5 +38,4 @@ def remover_area_especial():
         print("Input invalido. Voce precisa inserir um indice valido")
 
 
-# cadastrar_area_especial()
-# remover_area_especial()
+

@@ -1,5 +1,4 @@
 from control.controller_proprietario import ControllerProprietario
-from model.constants import *
 
 controller_proprietario = ControllerProprietario()
 
@@ -11,7 +10,6 @@ def cadastrar_proprietario():
 
     controller_proprietario.register_proprietario(nome, matricula, curso)
 
-
 def remover_proprietario():
     print("\n====== REMOVER PROPRIETARIO ======")
     nome = input("Nome: ")
@@ -19,5 +17,3 @@ def remover_proprietario():
     controller_proprietario.remove_proprietario(nome)
 
 
-# cadastrar_proprietario()
-# remover_proprietario()

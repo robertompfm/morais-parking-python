@@ -1,6 +1,5 @@
 import sqlite3
 from dao.db_constants import *
-from model.constants import *
 from model.usuario import Usuario
 
 class DataUsuarios():
@@ -72,22 +71,3 @@ class DataUsuarios():
             return False
 
 
-# TESTS TO DELETE LATER
-
-# roberto = Usuario("Roberto", "robertompfm@gmail.com", "beto", ESTACIONAMENTO)
-# larissa = Usuario("Larissa", "larissa@cauane.com", "hunterhunter", RH)
-# iria = Usuario("Iria", "iria@guazzi.com", "soju", GESTAO)
-# #
-# data_usuarios = DataUsuarios()
-# data_usuarios.open()
-# data_usuarios.drop_usuarios_table()
-# data_usuarios.create_usuarios_table()
-# data_usuarios.insert_usuario(roberto)
-# data_usuarios.insert_usuario(larissa)
-# data_usuarios.insert_usuario(iria)
-# print(data_usuarios.query_usuario_by_email("robertompfm@gmail.com"))
-# print(data_usuarios.query_usuario_by_email("larissa@cauane.com"))
-# print(data_usuarios.query_usuario_by_email("iria@guazzi.com"))
-# data_usuarios.delete_usuario_by_email("robertompfm@gmail.com")
-# print(data_usuarios.query_usuario_by_email("robertompfm@gmail.com"))
-# data_usuarios.close()

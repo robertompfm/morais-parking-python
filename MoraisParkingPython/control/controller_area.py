@@ -1,6 +1,6 @@
 from dao.data_area import DataAreaEstacionamento
 from model.area_estacionamento import AreaEstacionamento
-from model.constants import *
+
 
 class ControllerAreaEstacionamento():
     def __init__(self):
@@ -60,9 +60,4 @@ class ControllerAreaEstacionamento():
         self.data_area.close()
         return areas[0]
 
-# controller = ControllerAreaEstacionamento()
-# deficientes = controller.find_area("Deficientes")
-# print(deficientes)
-# controller.register_area("VIP", TIPO_VEICULO[1], 5)
-# # controller.remove_area("VIP")
-# controller.remove_area("Carros")
+

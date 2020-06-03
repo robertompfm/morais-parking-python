@@ -5,7 +5,7 @@ from model.constants import *
 from datetime import datetime
 
 def registrar_ocorrencia():
-    print("\n====== CADASTRAR OCORRENCIA ======")
+    print("\n====== REGISTRAR OCORRENCIA ======")
     print("Tipos de ocorrencia:")
     tipos_ocorrencia_str = ""
     for key, val in TIPO_OCORRENCIA.items():
@@ -36,6 +36,3 @@ def get_veiculos_envolvidos():
             placas.add(placa)
 
 
-# registrar_ocorrencia()
-# registrar_ocorrencia()
-# print(Relatorio.get_ocorrencias())

@@ -39,7 +39,6 @@ class ControllerLogin():
             return True
         return False
 
-# controller = ControllerLogin()
-# controller.sign_in("robertompfm@gmail.com", "beto")
+
 
 

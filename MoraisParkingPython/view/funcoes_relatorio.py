@@ -1,6 +1,5 @@
 from model.relatorio import Relatorio
-from model.ocorrencia import Ocorrencia
-from model.constants import *
+
 
 
 def gerar_relatorio():
@@ -15,4 +14,3 @@ def gerar_relatorio():
 
 
 
-# gerar_relatorio()

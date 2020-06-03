@@ -6,12 +6,9 @@ from control.controller_eventos import ControllerEventos
 from control.controller_estacionamento import ControllerEstacionamento
 
 from model.constants import *
-from model.evento import Evento
-from model.area_estacionamento import AreaEstacionamento
 from model.veiculo import Veiculo
 from model.relatorio import Relatorio
 
-from datetime import datetime
 
 controller_veiculo = ControllerVeiculos()
 controller_proprietario = ControllerProprietario()
@@ -79,7 +76,7 @@ def autorizar_entrada():
 
 
 def autorizar_saida():
-    print("\n====== REMOVER EVENTO ======")
+    print("\n====== AUTORIZAR SAIDA ======")
     placa = input("Placa: ")
     if len(placa) <= 0:
         print("Placa invalida")
@@ -144,10 +141,3 @@ def inicializar_relatorio():
 
     Relatorio.set_ocupacoes_max(ocupacoes_max)
 
-# autorizar_entrada()
-# autorizar_saida()
-# consultar_status()
-
-
-# inicializar_relatorio()
-# update_relatorio()

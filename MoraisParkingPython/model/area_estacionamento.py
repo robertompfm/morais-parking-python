@@ -7,28 +7,6 @@ class AreaEstacionamento():
         self.tipo = tipo
         self.especial = especial
         self.ocupacao = ocupacao
-        # self.taxa_ocupacao = 0.0
-
-    # # SPECIFIC METHODS
-    # def adicionar_veiculo(self, veiculo):
-    #     if veiculo == None:
-    #         return False
-    #     if len(self.veiculos) >= self.capacidade:
-    #         return False
-    #     if not veiculo in self.veiculos:
-    #         self.veiculos.append(veiculo)
-    #         self.atualizar_taxa_ocupacao()
-    #         return True
-    #     return False
-    #
-    # def remover_veiculo(self, veiculo):
-    #     if veiculo == None:
-    #         return False
-    #     if veiculo in self.veiculos:
-    #         self.veiculos.remove(veiculo)
-    #         self.atualizar_taxa_ocupacao()
-    #         return True
-    #     return False
 
     # GETTERS AND SETTERS
     def get_nome(self):
@@ -65,9 +43,11 @@ class AreaEstacionamento():
     def __hash__(self):
         return hash(self.nome)
 
+    # EQUALS
     def __eq__(self, other):
         return isinstance(other, AreaEstacionamento) and self.nome == other.nome
 
+    # NOT EQUAL
     def __ne__(self, other):
         return not self.__eq__(other)
 

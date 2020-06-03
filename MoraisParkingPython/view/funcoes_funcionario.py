@@ -30,6 +30,3 @@ def remover_funcionario():
 
     controller_login.remove_user(email)
 
-# print(login())
-# cadastrar_funcionario()
-# remover_funcionario()

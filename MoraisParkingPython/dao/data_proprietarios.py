@@ -75,20 +75,3 @@ class DataProprietarios():
 
 
 
-# arthur = Proprietario("Arthur", "20192007000", "Sistemas para Internet")
-# larissa = Proprietario("Arthur", "20192007001", "Sistemas para Internet")
-# roberto = Proprietario("Roberto", "20192007002", "Sistemas para Internet")
-# iria = Proprietario("Iria", "20192007003", "Sistemas para Internet")
-#
-#
-# data_proprietarios = DataProprietarios()
-# data_proprietarios.open()
-# # data_proprietarios.drop_proprietarios_table()
-# data_proprietarios.create_proprietarios_table()
-# data_proprietarios.insert_proprietario(arthur)
-# data_proprietarios.insert_proprietario(roberto)
-# data_proprietarios.insert_proprietario(iria)
-# # print(data_proprietarios.query_proprietario_by_nome('Arthur'))
-# # print(data_proprietarios.delete_proprietario_by_nome("Arthur"))
-# print(data_proprietarios.query_proprietario_by_nome('Arthur'))
-# data_proprietarios.close()

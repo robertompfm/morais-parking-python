@@ -1,7 +1,6 @@
 import sqlite3
 from dao.db_constants import *
 from model.area_estacionamento import AreaEstacionamento
-from model.constants import *
 
 
 class DataAreaEstacionamento():
@@ -143,30 +142,3 @@ class DataAreaEstacionamento():
             return False
 
 
-# carros = AreaEstacionamento("Carros", TIPO_VEICULO[1], 30, False)
-# motos = AreaEstacionamento("Motos", TIPO_VEICULO[2], 20, False)
-# onibus = AreaEstacionamento("Ônibus", TIPO_VEICULO[3], 20, False)
-# deficientes = AreaEstacionamento("Deficientes", TIPO_VEICULO[1], 5, True)
-# vip = AreaEstacionamento("VIP", TIPO_VEICULO[1], 5, True)
-#
-# data_areas = DataAreaEstacionamento()
-# data_areas.open()
-# data_areas.drop_area_table()
-# data_areas.create_areas_table()
-# data_areas.insert_area(carros)
-# data_areas.insert_area(motos)
-# data_areas.insert_area(onibus)
-# data_areas.insert_area(deficientes)
-# data_areas.insert_area(vip)
-# print(data_areas.query_area_by_nome("Carros"))
-# print(data_areas.query_area_by_nome("Deficientes"))
-# print(data_areas.query_area_by_nome("VIP"))
-# data_areas.delete_area_by_nome("VIP")
-# for area in data_areas.query_areas_comuns():
-#     print(area)
-# for area in data_areas.query_areas_especiais():
-#     print(area)
-# for area in data_areas.query_areas_especiais_compativeis(TIPO_VEICULO[1]):
-#     print(area)
-# print(data_areas.query_area_by_nome("VIP"))
-# data_areas.close()

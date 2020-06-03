@@ -1,11 +1,5 @@
 import sqlite3
 from dao.db_constants import *
-from model.area_estacionamento import AreaEstacionamento
-from model.evento import Evento
-from model.proprietario import Proprietario
-from model.veiculo import Veiculo
-from model.constants import *
-from datetime import datetime
 
 
 class DataEstacionamento():
@@ -59,7 +53,6 @@ class DataEstacionamento():
         except sqlite3.Error:
             return []
 
-
     def delete_placa(self, placa):
         try:
             self.c.execute(DELETE_PLACA_FROM_ESTACIONAMENTO, (placa,))
@@ -84,16 +77,3 @@ class DataEstacionamento():
             return False
 
 
-# data_estacionamento = DataEstacionamento()
-# data_estacionamento.open()
-# data_estacionamento.drop_estacionamento_table()
-# data_estacionamento.create_estacionamento_table()
-#
-# data_estacionamento.insert_veiculo_in_estacionamento("XXX0000", "Carros")
-# data_estacionamento.insert_veiculo_in_estacionamento("JUN107", "Carros")
-# data_estacionamento.insert_veiculo_in_estacionamento("XUN1077", "Carros")
-#
-# placas = data_estacionamento.query_all_placas()
-# [print(placa) for placa in placas]
-#
-# data_estacionamento.close()

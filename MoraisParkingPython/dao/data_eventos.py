@@ -1,8 +1,6 @@
 import sqlite3
 from dao.db_constants import *
-from model.area_estacionamento import AreaEstacionamento
 from model.evento import Evento
-from model.constants import *
 from datetime import datetime
 
 
@@ -82,29 +80,5 @@ class DataEventos():
             return False
 
 
-# data_eventos = DataEventos()
-# data_eventos.open()
-# data_eventos.drop_eventos_table()
-# data_eventos.create_eventos_table()
-# inicio = (datetime.strptime("2020-05-25", "%Y-%m-%d")).date()
-# fim = (datetime.strptime("2020-06-12", "%Y-%m-%d")).date()
-# data_eventos.insert_evento("INOVA", inicio, fim)
-# inicio = (datetime.strptime("2020-12-10", "%Y-%m-%d")).date()
-# fim = (datetime.strptime("2020-12-24", "%Y-%m-%d")).date()
-# data_eventos.insert_evento("Hackathon", inicio, fim)
-# print(data_eventos.query_evento_by_nome("INOVA"))
-# for evento in data_eventos.query_all_eventos():
-#     print(evento)
-# data_eventos.delete_evento("Hackathon")
-# data_eventos.insert_permissao(("CBA4321", "Deficientes"))
-# data_eventos.insert_permissao(("CBA4321", "VIP"))
-# for permissao in data_eventos.query_permissoes_by_placa("CBA4321"):
-#     print(permissao)
-# print(data_eventos.query_permissao(("CBA4321", "VIP")))
-# # print(data_permissoes.delete_permissoes_by_veiculo(("CBA4321")))
 
-# data_eventos.close()
-
-# print((datetime.strptime("2020-05-25", "%Y-%m-%d")).date())
-# print((datetime.strptime("2020-05-30", "%Y-%m-%d")).date() <= datetime.now().date())
 

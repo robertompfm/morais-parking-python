@@ -2,7 +2,6 @@ import sqlite3
 from dao.db_constants import *
 from model.veiculo import Veiculo
 from model.proprietario import Proprietario
-from model.constants import *
 
 class DataVeiculos():
     def open(self):
@@ -94,27 +93,5 @@ class DataVeiculos():
             return False
 
 
-# arthur = Proprietario("Arthur", "20192007000", "Sistemas para Internet")
-# larissa = Proprietario("Arthur", "20192007001", "Sistemas para Internet")
-# roberto = Proprietario("Roberto", "20192007002", "Sistemas para Internet")
-# iria = Proprietario("Iria", "20192007003", "Sistemas para Internet")
-#
-# moto = Veiculo("ABC1234", "Honda", "Vermelho", arthur, TIPO_VEICULO[2])
-# carro = Veiculo("CBA4321", "Kombi", "Branco", iria, TIPO_VEICULO[1])
-# onibus = Veiculo("XXX0000", "Mercedes Benz", "Branco", roberto, TIPO_VEICULO[3])
-#
-#
-# data_veiculos = DataVeiculos()
-# data_veiculos.open()
-# data_veiculos.drop_veiculos_table()
-# data_veiculos.create_veiculos_table()
-# data_veiculos.insert_veiculo(moto)
-# data_veiculos.insert_veiculo(carro)
-# data_veiculos.insert_veiculo(onibus)
-# print(data_veiculos.query_veiculo_by_placa("ABC1234"))
-# # data_veiculos.delete_veiculo_by_placa("ABC1234")
-# print(data_veiculos.query_veiculo_by_placa("ABC1234"))
-# for placa in data_veiculos.query_placas_by_proprietario("Junior"):
-#     print(placa)
-# data_veiculos.close()
+
 

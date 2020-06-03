@@ -37,8 +37,4 @@ class ControllerProprietario():
         return proprietario
 
 
-# controller = ControllerProprietario()
-# controller.register_proprietario("Junior", 20192007004, "Sistemas para Internet")
-# print(controller.find_proprietario("Junior"))
-# controller.remove_proprietario("Junior")
-# print(controller.find_proprietario("Junior"))
+

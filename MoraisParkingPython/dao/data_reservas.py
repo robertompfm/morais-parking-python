@@ -1,9 +1,6 @@
 import sqlite3
 from dao.db_constants import *
 from model.area_estacionamento import AreaEstacionamento
-from model.evento import Evento
-from model.constants import *
-from datetime import datetime
 
 
 class DataReservas():
@@ -88,11 +85,4 @@ class DataReservas():
             return False
 
 
-# data_reservas = DataReservas()
-# data_reservas.open()
-# data_reservas.drop_reservas_table()
-# data_reservas.create_reservas_table()
-# data_reservas.close()
 
-# print((datetime.strptime("2020-05-25", "%Y-%m-%d")).date())
-# print((datetime.strptime("2020-05-30", "%Y-%m-%d")).date() <= datetime.now().date())

@@ -4,9 +4,7 @@ from control.controller_permissoes import ControllerPermissoes
 from control.controller_area import ControllerAreaEstacionamento
 from control.controller_eventos import ControllerEventos
 
-from model.constants import *
 from model.evento import Evento
-from model.area_estacionamento import AreaEstacionamento
 
 from datetime import datetime
 
@@ -94,5 +92,3 @@ def remover_evento():
         print("Input invalido. Voce precisa inserir um indice valido")
 
 
-# cadastrar_evento()
-# remover_evento()

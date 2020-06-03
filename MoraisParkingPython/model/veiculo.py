@@ -58,4 +58,4 @@ class Veiculo:
 
     # NE (not equals)
     def __ne__(self, other):
-        not self == other
+        return not self == other

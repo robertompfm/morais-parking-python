@@ -1,11 +1,7 @@
 
 from dao.data_eventos import DataEventos
 from dao.data_reservas import DataReservas
-from dao.data_permissoes import DataPermissoes
-from model.area_estacionamento import AreaEstacionamento
-from model.evento import Evento
-from model.veiculo import Veiculo
-from model.constants import *
+
 
 from datetime import datetime
 
@@ -76,11 +72,5 @@ class ControllerEventos():
                 return evento
         return None
 
-# controller = ControllerPermissoes()
-# permissoes = controller.find_permissoes_by_placa("CBA4321")
-# for permissao in permissoes:
-#     print(permissao)
-# permissoes = controller.find_permissoes_by_placa("XXX0000")
-# for permissao in permissoes:
-#     print(permissao)
+
 
