@@ -9,6 +9,7 @@ from view.funcoes_permissoes import *
 from view.funcoes_eventos import *
 from view.funcoes_estacionamento import *
 from view.funcoes_ocorrencias import *
+from view.funcoes_relatorio import *
 
 
 class Main():
@@ -132,7 +133,8 @@ class Main():
             4: remover_area_especial,
             5: cadastrar_evento,
             6: remover_evento,
-            7: self.logout
+            7: gerar_relatorio,
+            8: self.logout
         }
         print("\n====== MENU RH ======")
         print("[1] Cadastrar funcionario",
@@ -141,7 +143,8 @@ class Main():
               "\n[4] Remover area especial",
               "\n[5] Cadastrar evento",
               "\n[6] Remover evento",
-              "\n[7] Logout")
+              "\n[7] Gerar relatorio",
+              "\n[8] Logout")
 
         try:
             op_menu = int(input(MENU))
